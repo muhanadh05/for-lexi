@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Since We Met ⏳💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 15px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Floating Background Elements */
+    .bg-icon {
+      position: absolute;
+      font-size: 2rem;
+      user-select: none;
+      animation: float 5s ease-in-out infinite alternate;
+      opacity: 0.8;
+    }
+
+    .i1 { top: 6%; left: 8%; animation-delay: 0s; }
+    .i2 { top: 10%; right: 10%; animation-delay: 1s; }
+    .i3 { bottom: 10%; left: 8%; animation-delay: 2s; }
+    .i4 { bottom: 12%; right: 8%; animation-delay: 1.5s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-15px) rotate(10deg); }
+    }
+
+    /* Main Card Box */
+    .timer-card {
+      background: #ffffff;
+      border: 4px solid #ff85a2;
+      border-radius: 35px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
+      z-index: 10;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      color: #ff3366;
+      font-size: 1.8rem;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+    }
+
+    p.subtitle {
+      color: #7a3e5c;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    /* Live Counter Grid */
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .time-box {
+      background: #fff0f5;
+      border: 2px dashed #ff85a2;
+      border-radius: 20px;
+      padding: 15px 10px;
+    }
+
+    .time-value {
+      color: #ff3366;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .time-label {
+      color: #7a3e5c;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Custom Personal Note */
+    .note-box {
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 20px;
+      border: 2px dashed #ff85a2;
+    }
+
+    .note-box p {
+      color: #5c2c43;
+      font-size: 1.05rem;
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .btn {
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .primary-btn {
+      background-color: #ff4081;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background-color: #f50057;
+      transform: scale(1.03);
+    }
+
+    .secondary-btn {
+      background-color: #ffffff;
+      color: #7a3e5c;
+      border: 2px solid #ff85a2;
+    }
+
+    .secondary-btn:hover {
+      background-color: #ffe3ec;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-icon i1">⏳</div>
+  <div class="bg-icon i2">✨</div>
+  <div class="bg-icon i3">💖</div>
+  <div class="bg-icon i4">🌸</div>
+
+  <div class="timer-card">
+    <h1>OUR TIME TOGETHER ⌛✨</h1>
+    <p class="subtitle">Every second since April 16th, 2025 at 1:00 AM</p>
+
+    <div class="counter-grid">
+      <div class="time-box">
+        <div class="time-value" id="days">0</div>
+        <div class="time-label">Days</div>
+      </div>
+      <div class="time-box">
+        <div class="time-value" id="hours">0</div>
+        <div class="time-label">Hours</div>
+      </div>
+      <div class="time-box">
+        <div class="time-value" id="minutes">0</div>
+        <div class="time-label">Minutes</div>
+      </div>
+      <div class="time-box">
+        <div class="time-value" id="seconds">0</div>
+        <div class="time-label">Seconds</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p>"In all this time, my favorite thing in the world is still talking to you and trying to make you happy." 💖</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="reasons.html" class="btn primary-btn">
+      Reasons Why I Love You 💖
+    </a>
+    <a href="suprise.html" class="btn secondary-btn">
+      ⬅️ Back to Letter & Playlist
+    </a>
+  </div>
+
+  <script>
+    function updateCounter() {
+      // Date set to April 16, 2025 at 1:00 AM (Month 3 = April in JS)
+      const meetDate = new Date(2025, 3, 16, 1, 0, 0); 
+      const now = new Date();
+
+      const diff = now - meetDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').innerText = days;
+      document.getElementById('hours').innerText = hours;
+      document.getElementById('minutes').innerText = minutes;
+      document.getElementById('seconds').innerText = seconds;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
+
+</body>
+</html>
